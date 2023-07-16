@@ -14,3 +14,6 @@ bash ./init_name.sh --name xxx
 ### 特性
 * make.sh一键完成编译和模块打包
 * ci-build action自动编译并且打包到github
+
+### 补充
+* 模板内的Apache License只是一个默认选项, 可删除/改成别的许可证类型
