@@ -7,4 +7,4 @@ MODDIR=${0%/*}
 # done
 
 # 启动程序
-nohup $MODDIR/template_nHA9NDay6C >/dev/null 2>&1 &
+nohup $MODDIR/template_nha9nday6c >/dev/null 2>&1 &

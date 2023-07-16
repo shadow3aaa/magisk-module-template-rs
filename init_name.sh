@@ -17,10 +17,10 @@ if [ "$name" = "" ]; then
     exit 1
 fi
 
-find . -not -name "init.sh" -type f -exec sed -i "s/template_nHA9NDay6C/${name}/g" {} \;
+find . -not -name "init.sh" -type f -exec sed -i "s/template_nha9nday6c/${name}/g" {} \;
 
 echo "初始化仓库成功"
-echo "更名: template_nHA9NDay6C -> $name"
+echo "更名: template_nha9nday6c -> $name"
 echo "此脚本已移除, 如果还需更改项目名(不建议)只能手动修改"
 
 rm init_name.sh

@@ -1,7 +1,7 @@
 #/usr/bin/bash
 
 here=$(pwd)
-bin="${here}/target/aarch64-linux-android/release/template_nHA9NDay6C"
+bin="${here}/target/aarch64-linux-android/release/template_nha9nday6c"
 
 set -e
 
@@ -16,6 +16,6 @@ echo -e "Build successed"
 cp -f $(realpath $bin) "${here}/build_module/"
 
 cd "${here}/build_module/"
-zip -9 -rq ../template_nHA9NDay6C.zip .
+zip -9 -rq ../template_nha9nday6c.zip .
 
-echo -n "Packaging is complete: $(realpath ${here}/template_nHA9NDay6C.zip)"
+echo -n "Packaging is complete: $(realpath ${here}/template_nha9nday6c.zip)"
