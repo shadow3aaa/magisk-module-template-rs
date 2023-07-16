@@ -1,0 +1,27 @@
+[package]
+name = "template_nHA9NDay6C"
+version = "0.1.0"
+edition = "2021"
+description = "template"
+license = "Apache"
+readme = "README.md"
+repository = "https://github.com/shadow3aaa/magisk-module-template-rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[build-dependencies]
+serde = "1.0.171"
+serde_derive = "1.0.171"
+toml = "0.7.6"
+
+[profile.dev]
+panic = 'abort'
+
+[profile.release]
+codegen-units = 1
+lto = 'fat'
+opt-level = 3
+strip = true
+panic = 'abort'
