@@ -1,4 +1,4 @@
-#/usr/bin/bash
+#!/usr/bin/bash
 
 if [[ "$1" = "--help" || "$1" = "-h" || "$1" = "" ]]; then
     echo "帮助:"
@@ -6,7 +6,7 @@ if [[ "$1" = "--help" || "$1" = "-h" || "$1" = "" ]]; then
     echo "初始化修改只能执行一次, 并且此脚本初始化后自动删除, 谨慎选择"
     echo "示例: bash ./init.sh --name foo"
     exit 0
-else if [ "$1" = "--name" ]; then
+elif [ "$1" = "--name" ]; then
     name=$2
 fi
 
