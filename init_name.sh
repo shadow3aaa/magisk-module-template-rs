@@ -23,4 +23,4 @@ echo "初始化仓库成功"
 echo "更名: template_nHA9NDay6C -> $name"
 echo "此脚本已移除, 如果还需更改项目名(不建议)只能手动修改"
 
-rm init.sh
+rm init_name.sh
