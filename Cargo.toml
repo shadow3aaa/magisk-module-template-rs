@@ -20,8 +20,5 @@ toml = "0.7.6"
 panic = 'abort'
 
 [profile.release]
-codegen-units = 1
-lto = 'fat'
-opt-level = 3
 strip = true
 panic = 'abort'
