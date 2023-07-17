@@ -42,6 +42,6 @@ jobs:
     - name: Upload ci
       uses: actions/upload-artifact@v3.1.2
       with:
-        name: template_nha9nday6c(ci_build).zip
-        path: ./template_nha9nday6c.zip
+        name: template_nha9nday6c(ci_build)
+        path: ./build_module
         
