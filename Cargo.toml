@@ -2,6 +2,7 @@
 name = "template_nha9nday6c"
 version = "0.1.0"
 edition = "2021"
+authors = ["template"]
 description = "template"
 license = "Apache"
 readme = "README.md"
