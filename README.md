@@ -8,12 +8,11 @@
 * 2.clone创建的仓库
 * 3.初始化项目名(只能这么做一次)
 ```
-bash ./init_name.sh --name xxx
+bash ./edit_name.sh --name xxx
 ```
 
 ### 特性
-* make.sh一键完成编译和模块打包
-* ci-build action自动编译并且打包到github
+* make.sh一键完成编译和模块打包等项目管理
 
 ### 补充
-* 模板内的Apache License只是一个默认选项, 可删除/改成别的许可证类型
+* 模板内的WTFPL License只是一个默认选项, 可删除/改成别的许可证类型

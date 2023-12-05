@@ -1,21 +1,34 @@
-#/usr/bin/bash
+#!/bin/bash
+SHDIR="$(dirname $(readlink -f "$0"))"
+SCRIPT=$SHDIR/script
 
-here=$(pwd)
-bin="${here}/target/aarch64-linux-android/release/template_nha9nday6c"
-
-set -e
-
-cargo b -r --target aarch64-linux-android
-
-if [ ! -f $bin ]; then
-    echo "Fail to build release"
-    exit 1
-fi
-
-echo -e "Build successed"
-cp -f $(realpath $bin) "${here}/build_module/"
-
-cd "${here}/build_module/"
-zip -9 -rq ../template_nha9nday6c.zip .
-
-echo -n "Packaging is complete: $(realpath ${here}/template_nha9nday6c.zip)"
+case $1 in
+build)
+	source $SCRIPT/build.sh
+	shift
+	build $@
+	;;
+format | fmt)
+	source $SCRIPT/format.sh
+	format_codes
+	;;
+fix)
+	source $SCRIPT/fix.sh
+	fix_codes
+	;;
+help)
+	echo "./make.sh:
+    build:
+        build and package module
+        sugg: try ./make.sh build --help to get details
+    format:
+        format codes
+    fix:
+        fix codes"
+	;;
+*)
+	echo Illegal parameter: $1 >&2
+	echo Try \'./make.sh help\' >&2
+	exit 1
+	;;
+esac

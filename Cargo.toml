@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["template"]
 description = "template"
-license = "Apache"
+license = "WTFPL"
 readme = "README.md"
 repository = "https://github.com/shadow3aaa/magisk-module-template-rs"
 
@@ -16,10 +16,3 @@ repository = "https://github.com/shadow3aaa/magisk-module-template-rs"
 serde = "1.0.171"
 serde_derive = "1.0.171"
 toml = "0.7.6"
-
-[profile.dev]
-panic = 'abort'
-
-[profile.release]
-strip = true
-panic = 'abort'

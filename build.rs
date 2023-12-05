@@ -8,7 +8,6 @@ struct Package {
     pub name: String,
     pub version: String,
     pub description: String,
-    pub repository: String,
 }
 
 #[derive(Deserialize)]
@@ -17,7 +16,10 @@ struct TomlData {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    println!("cargo:rerun-if-changed=make.sh");
+    println!("cargo:rerun-if-changed=README.md");
+    println!("cargo:rerun-if-changed=Cargo.lock");
+    println!("cargo:rerun-if-changed=Cargo.toml");
+    println!("cargo:rerun-if-changed=LICENSE");
 
     let toml = fs::read_to_string("Cargo.toml")?;
     let data: TomlData = toml::from_str(&toml)?;
@@ -36,18 +38,17 @@ fn main() -> Result<(), Box<dyn Error>> {
         .create(true)
         .truncate(true)
         .write(true)
-        .open("build_module/module.prop")?;
+        .open("module/module.prop")?;
 
     writeln!(file, "id={id}")?;
     writeln!(file, "name={}", package.name)?;
     writeln!(file, "version=v{}", package.version)?;
     writeln!(file, "versionCode={version_code}")?;
     writeln!(file, "author={author}")?;
-    writeln!(
-        file,
-        "description={} {}",
-        package.description, package.repository
-    )?;
+    writeln!(file, "description={}", package.description)?;
+
+    let _ = fs::remove_file("module/README.md");
+    fs::copy("README.md", "module/README.md")?;
 
     Ok(())
 }
