@@ -16,7 +16,7 @@ if [ "$name" = "" ]; then
 	exit 1
 fi
 
-find . -not -name "init.sh" -type f -exec sed -i "s/template_nha9nday6c/${name}/g" {} \;
+find . -not -name "edit_name.sh" -type f -exec sed -i "s/template_nha9nday6c/${name}/g" {} \;
 
 echo "初始化仓库成功"
 echo "更名: template_nha9nday6c -> $name"
